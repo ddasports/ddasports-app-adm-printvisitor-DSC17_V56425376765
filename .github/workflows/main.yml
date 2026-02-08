@@ -4,7 +4,9 @@ on:
   schedule:
     - cron: '00 00 * * *'   # 12:00 AM IST
   workflow_dispatch:
-
+permissions:
+  contents: write
+  
 jobs:
   generate-html:
     runs-on: ubuntu-latest
