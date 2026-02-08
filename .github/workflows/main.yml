@@ -39,7 +39,7 @@ jobs:
           
       - name: Send receipt on Telegram
         run: |
-          MESSAGE="Visitor Receipt
+          MESSAGE="<b>Visitor Receipt</b>
       
           Complex Name - Dwarka Sports Complex Sector 17
           Receipt Date - $DATE_READABLE
@@ -52,7 +52,7 @@ jobs:
           Transaction Type - QR Code
           User/Time - recp3 / 5:10 PM
       
-          Note:
+          <b>Note</b>:
           Once the receipt is issued, money will not be refunded.
           The management accepts no responsibility for any accident or mishap.
           Any injuries / infections / loss of life while availing the facilities
@@ -60,10 +60,11 @@ jobs:
           No compensation or claim shall be entertained.
       
           Best Regards,
-          DDA / DSC17
+          <b>DDA / DSC17</b>
       
-          🔗 [Verify Receipt](https://ddasports.github.io/ddasports-app-adm-printvisitor-DSC17_V56425376765/)"
+          <a href='https://ddasports.github.io/ddasports-app-adm-printvisitor-DSC17_V56425376765/'>Verify Receipt</a>"
       
           curl -s -X POST https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage \
             -d chat_id=${{ secrets.TG_CHAT_ID }} \
-            -d text="$MESSAGE"
+            -d parse_mode=HTML \
+            --data-urlencode text="$MESSAGE"
