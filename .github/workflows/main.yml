@@ -20,7 +20,7 @@ jobs:
           DATE_URL_ENCODED=$(date +"%d%%20%b%%20%Y")
 
           # Recreate index.html from template
-          cp placeholder.html index.html
+          cp place_holder.html index.html
 
           # Replace placeholders
           sed -i "s/DATE_PLACEHOLDER_SPACE/$DATE_URL_ENCODED/g" index.html
