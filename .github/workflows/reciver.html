@@ -1,15 +1,13 @@
-name: Receive Trigger from Receipt Automation
+name: Receive Receipt Trigger
 
 on:
   repository_dispatch:
     types: [receipt_trigger]
 
 jobs:
-  run:
+  process:
     runs-on: ubuntu-latest
     steps:
-      - name: Show payload
-        run: |
-          echo "Triggered by receipt-automation"
+      - run: |
           echo "Receipt: ${{ github.event.client_payload.receipt }}"
           echo "Date: ${{ github.event.client_payload.date }}"
