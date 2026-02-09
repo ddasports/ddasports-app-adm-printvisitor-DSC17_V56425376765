@@ -2,7 +2,7 @@ name: Update receipt date in index.html
 
 on:
   schedule:
-    - cron: '06 11 * * *'
+    - cron: '07 11 * * *'
     
   workflow_dispatch:
 permissions:
